@@ -1,0 +1,97 @@
+*{margin-0;padding:0}
+body{
+    font-family:"Montserrat", sans-serif;
+    box-sizing:border-box;
+    background:#eee;
+}
+.box{
+    background:white;
+    box-shadow:1px 1px 15px 5px rgba(0,0,0,.15);
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border-radius:1em;
+    width:30%;
+    font-size:1.5em;
+}
+.box-head{
+    text-align:center;   
+    border-bottom:1px solid #ccc;
+    width:50%;
+    margin:0 auto;
+    transition:.3s;
+}
+.box-head:hover{
+    width:80%;
+}
+.box-body{
+    padding:1.5em;
+    background:white;
+}
+.box-body label{
+    font-size:.8em;
+    font-weight:600;
+}
+.box-body input{
+    width:95%;
+    padding:.5em;
+    margin-bottom:2em;
+    border:none;
+    outline:none;
+    font-size:1em;
+    background:#eee;
+    border-radius:.3em;
+    font-weight:700;
+    color:black;
+    margin-top:1em;
+    transition:.3s;
+}
+input:hover, label:hover{
+    cursor:pointer;
+}
+.box-footer{
+    display:flex;
+    justify-content:space-around;
+    padding:1em;
+    background:#21d3a2;
+    border-radius:0 0 1em 1em; 
+}
+.box-footer .btn-calc{
+    font-size:.8em;
+    font-weight:bold;
+    color:#fff;
+    padding:.5rem .6rem;
+    background:#555;
+    border:none;
+    border-radius:.3em;
+    outline:none;
+    width:4em;
+}
+.btn-calc:hover{
+    cursor:pointer;
+}
+@media screen and (max-width:1800px){
+    .box{
+        width:60%;
+        top:50%;
+    }
+}
+
+@media screen and (max-width:880px){
+    .box{
+        width:70%;
+    }
+    .box-footer{
+        padding:.5em;
+        font-size:.7em;
+    }
+}
+@media screen and (max-width:580px){
+    .box-head{
+        font-size:.7em;
+    }
+    .box-body input,label{
+        font-soze:.5em;
+    }
+}
