@@ -1,0 +1,85 @@
+<style>
+    body{
+        background-color: #eee;
+    }
+    table{
+        font-family:Arial;
+        width: 600px;
+        border-collapse: collapse;
+        text-align: left;
+        border-bottom:1px solid #ccc;
+        border-left:1px solid #ccc;
+        margin:auto;
+    }
+    th{
+        width:100px;
+        text-align:center;
+        background-color: #26c65d;
+        color:white;
+        padding:.5em;
+
+    }
+    tr{
+        width:500px;
+    }
+    td{
+        width:100px;
+        padding:.5em;
+        border-right:1px solid #ccc;
+        background-color: white;
+
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>Lokasi</th>
+            <th>Skala</th>
+            <th>Dampak</th>
+        </tr>
+    </table>
+</body>
+<script>
+    class info {
+        constructor(lokasi, skala) {
+            this.lokasi=lokasi;
+            this.skala=skala;    
+        }
+        dampak_gempa() {
+            let dampak;
+            if(this.skala >= 0 && this.skala <= 2) {
+            dampak ="Dampak Tidak Terasa";
+            }else if(this.skala > 2 && this.skala <= 4) {
+                dampak="Bangunan Retak";
+             }else if(this.skala > 4 && this.skala <= 6) {
+                 dampak="Bangunan Roboh";
+             }else if(this.skala >6 ) {
+                dampak="Berpotensi Tsunami";
+             } 
+             else {
+                 dampak='Tidak Ada Gempa';
+             }
+            let el_lokasi = document.getElementById('lokasi'),
+                el_skala = document.getElementById('skala'),
+                el_dampak = document.getElementById('dampak');
+
+            //  el_lokasi.innerHTML = this.lokasi+"<br>";
+            console.log(this.lokasi)
+             document.write(
+                `<table>
+                    <tr>
+                        <td>${this.lokasi}</td>
+                        <td>${this.skala}</td>
+                        <td>${dampak}</td>
+                    </tr>
+                </table>
+                `);
+        }
+    }
+    let negara=["China","Portugal","Indonesia","Jepang","Malaysia","Rusia","Ukraina","Brazil","Canada","Manado"];
+    let skala= [1.2, 4.7, 2.1, 5.5, 8.5,5.5,6.0,7.0,7.7,6.5];
+    for(let x in negara){
+        let call= new info(negara[x], skala[x]);
+        call.dampak_gempa();
+    }
+</script>
