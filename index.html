@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas JQUERY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="t1">
+        <h1>Tugas #1 : Klik Suara hewan</h1>
+        <div class="box">
+            <div class="boxes" id="lion">
+                <span>Lion</span>
+            </div>
+            <div class="boxes" id="monkey">
+                <span>Monkey</span>
+    
+            </div>
+            <div class="boxes" id="horse">
+                <span>Horse</span>
+    
+            </div>
+            <div class="boxes" id="cow">
+                <span>Cow</span>
+            </div>
+        </div>
+    </section>
+    <section id="t2">
+        <h1 style="text-align: center;">Tugas #2 : SlideToggle()</h1>
+        <div class="titles" id="a">Company Profile</div>
+        <div class="bodies" id="companyprofile">
+            <p>NF COMPUTER adalah bagian dari grup Nurul Fikri yang telah dipercaya oleh masyarakat Indonesia di bidang pendidikan dan peningkatan sumber daya manusia selama lebih dari 24 tahun. Alumni-alumninya telah berkiprah dan diakui kualitas kerja dan integritasnya oleh dunia usaha.
+            </p>
+            <p>
+                NF COMPUTER dirintis sejak tahun 1994 dan merupakan sebuah lembaga di bidang pendidikan dan pelatihan IT (Information Technology). Kami berkomitmen menjadi partner perusahaan Anda dalam mengembangkan kemampuan serta keahlian SDM di bidang IT. Dengan komitmen tersebut, kami mempersiapkan tim pengajar yang professional dan berpengalaman di bidang IT.
+            </p>
+            <p>
+                Di Era Industri 4.0 saat ini, teknologi informasi berkembang sangat cepat, oleh karena itu pengembangan sumber daya manusia di bidang IT menjadi sebuah kebutuhan yang perlu diprioritaskan. NF COMPUTER menjadi jawaban yang tepat atas kebutuhan pengembangan kompetensi IT. Sehingga kami selalu berusaha untuk terus berinovasi terhadap teknologi terbaru
+            </p>
+        </div>
+        <div class="titles" id="b">Visi & Misi</div>
+        <div class="bodies" id="visimisi">
+            <p>    
+                Visi
+                Menjadi institusi pelatihan yang kompeten dan profesional di bidang pendidikan teknologi informasi dan komunikasi di berbagai wilayah indonesia.
+            </p>
+            <p>
+                
+                Misi
+                Membangun, memelihara dan mengembangkan institusi pelatihan bisnis berdaya saing tinggi, berkarakter profesional, kompeten, mengedepankan integritas dan tanggung jawab sosial, dengan mengembangkan dan menyediakan produk produk pendidikan dan pelatihan teknologi informasi dan komunikasi prima.
+            </p>   
+
+        </div>
+        <div class="titles" id="c">Deskripsi Bisnis</div>
+        <div class="bodies" id="deskripsi">
+            <p>
+                NF COMPUTER menyelenggarakan Pelatihan dan Pendidikan di bidang Teknologi Informasi dan Komunikasi (IT Training) yang dibagi menjadi lima produk.
+            </p>           
+
+            Pelatihan (training) ini dibagi dalam beberapa kategori produk yaitu :
+            <br>
+            <ul>
+                <li>
+                    Public Class, merupakan short course bidang TIK (Teknologi Informasi dan Komunikasi) yang berbasis Linux maupun Windows.
+                </li>
+                <li>
+                    Exclusive Class, merupakan paket training yang diberikan kepada customer dengan durasi 6-8 jam perhari dengan jumlah peserta minimal 2 orang dan pelaksanaan pelatihannya di NF Computer.
+                </li>
+                <li>
+                    In House/In Company Training, yaitu pelatihan TIK yang dikustomisasi untuk kebutuhan perusahaan-perusahaan
+                </li>
+            </ul>
+            <br>
+            Paket bisnis khusus dibagi ke dalam beberapa kategori produk yang dikelola secara profesional oleh NF COMPUTER yaitu :
+            <ul>
+                <li>
+                    Kerjasama Pendidikan Sekolah, yaitu Divisi khusus pendidikan sekolah dimana NF COMPUTER bekerjasama dalam hal : Kerjasama pembangunan Lab Komputer, Pengajaran Komputer dan kombinasi antara keduanya.
+                </li>
+                <li>
+                    Usulan Produk lain: Produk-produk yang menurut lokasi diminati oleh pasar tapi belum ada dalam daftar produk pelatihan dan pendidikan NF COMPUTER, dapat diajukan oleh cabang untuk menjadi produk yang dipertimbangkan sebagai produk dan akan menjadi bagian dari penyelenggaraan pelatiahan dan pendidikan di cabang tersebut pada periode yang dianggap tepat oleh NF COMPUTER.
+                </li>
+            </ul>
+
+        </div>
+
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var song_lion = document.createElement('audio');
+            song_lion.setAttribute('src', 'audio/lion.mp3');
+
+            var song_monkey = document.createElement('audio');
+            song_monkey.setAttribute('src', 'audio/monkey.wav');
+
+            var song_horse = document.createElement('audio');
+            song_horse.setAttribute('src', 'audio/kuda.mp3');
+
+            var song_cow = document.createElement('audio');
+            song_cow.setAttribute('src', 'audio/sapi.wav');
+
+
+            $('#lion').click(function(){
+                $('#lion').css("background","url(img/singa.jpg)");
+                console.log('ditekan');
+                song_lion.play();
+            });
+            $('#monkey').click(function(){
+                $('#monkey').css("background","url(img/monyet.jpg)");
+                console.log('ditekan');
+                song_monkey.play();
+            });
+            $('#horse').click(function(){
+                $('#horse').css("background","url(img/kuda.jpg)");
+                console.log('ditekan');
+                song_horse.play();
+            });
+            $('#cow').click(function(){
+                $('#cow').css("background","url(img/sapi.jpg)");
+                console.log('ditekan');
+                song_cow.play();
+            });
+            $('#a').click(function(){
+                $('#companyprofile').slideToggle();
+            });
+            $('#b').click(function(){
+                $('#visimisi').slideToggle();
+            });
+            $('#c').click(function(){
+                $('#deskripsi').slideToggle();
+            });
+
+        });
+    </script>
+</body>
+</html>
